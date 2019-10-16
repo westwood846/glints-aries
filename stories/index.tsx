@@ -64,6 +64,7 @@ import TooltipStory from './Display/TooltipStory';
 
 // Employers
 import EmployersBlockquoteStory from './Display/EmployersBlockquoteStory';
+import ToggleSwitchStory from '../src/Input/ToggleSwitch/ToggleSwitch.story';
 
 storiesOf('Introduction', module)
   .addDecorator(story => (
@@ -105,6 +106,7 @@ storiesOf('Input', module)
       <StorybookStyle>{story()}</StorybookStyle>
     </Provider>
   ))
+  .addDecorator(withKnobs)
   .add('Auto Complete', () => <AutoCompleteStory />)
   .add('Checkbox', () => <CheckboxStory />)
   .add('Datepicker', () => <DatepickerStory />)
@@ -114,6 +116,7 @@ storiesOf('Input', module)
   .add('Search Filter', () => <SearchFilterStory />)
   .add('Select', () => <SelectStory />)
   .add('Switch', () => <SwitchStory />)
+  .add('Toggle Switch', () => <ToggleSwitchStory />)
   .add('Textarea', () => <TextareaStory />)
   .add('Text Field', () => <TextFieldStory />);
 
