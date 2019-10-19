@@ -9,14 +9,15 @@ import LinkButton from './LinkButton';
 import { Variant } from '../../Utils/StyleConfig';
 
 const renderButton: React.FunctionComponent<Props> = ({
-  variant,
-  theme,
   children,
-  onClick,
   block,
-  small,
   className,
+  disabled,
+  onClick,
   removeHoverEffect,
+  small,
+  theme,
+  variant,
   ...defaultProps
 }) => {
   switch (variant) {
@@ -25,6 +26,7 @@ const renderButton: React.FunctionComponent<Props> = ({
         <PrimaryButton
           theme={theme}
           className={className}
+          disabled={disabled}
           onClick={onClick}
           block={block}
           small={small}
@@ -37,6 +39,7 @@ const renderButton: React.FunctionComponent<Props> = ({
       return (
         <SecondaryButton
           className={className}
+          disabled={disabled}
           onClick={onClick}
           block={block}
           small={small}
@@ -50,6 +53,7 @@ const renderButton: React.FunctionComponent<Props> = ({
         <GhostButton
           theme={theme}
           className={className}
+          disabled={disabled}
           onClick={onClick}
           block={block}
           small={small}
@@ -64,6 +68,7 @@ const renderButton: React.FunctionComponent<Props> = ({
         <LinkButton
           theme={theme}
           className={className}
+          disabled={disabled}
           onClick={onClick}
           block={block}
           small={small}
@@ -77,6 +82,7 @@ const renderButton: React.FunctionComponent<Props> = ({
         <DefaultButton
           theme={theme}
           className={className}
+          disabled={disabled}
           onClick={onClick}
           block={block}
           small={small}
@@ -94,14 +100,15 @@ const Button: React.FunctionComponent<Props> = props => (
 );
 
 export interface Props {
-  variant?: string;
-  theme?: string;
-  onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
-  block?: boolean;
-  small?: boolean;
   children: React.ReactNode;
+  block?: boolean;
   className?: string;
+  disabled?: boolean;
+  onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   removeHoverEffect?: boolean;
+  small?: boolean;
+  theme?: string;
+  variant?: string;
 }
 
 export default Button;
