@@ -1,11 +1,14 @@
 import * as React from 'react';
+import classNames from 'classnames';
+
 import { LinkBtn } from '../../Style/General/ButtonStyle';
 
 const LinkButton: React.FunctionComponent<Props> = ({
   children,
+  className,
   ...defaultProps
 }) => (
-  <LinkBtn className="aries-linkbtn" {...defaultProps}>
+  <LinkBtn className={classNames("aries-linkbtn", className)} {...defaultProps}>
     {children}
   </LinkBtn>
 );
